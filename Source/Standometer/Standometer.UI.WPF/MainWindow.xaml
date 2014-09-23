@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Class="Standometer.UI.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Keep Standing" Height="354" Width="255" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="Black" Icon="Standometer.ico">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Resources/Icons.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Grid>
+		<TextBlock HorizontalAlignment="Left" Margin="2,2,0,0" TextWrapping="Wrap" Text="Standing Status" VerticalAlignment="Top" Width="229" FontSize="24" />
+
+		<Rectangle x:Name="UpArrow" Margin="20,40,20,20" Opacity="0.2">
+			<Rectangle.Fill>
+				<VisualBrush Visual="{StaticResource appbar_arrow_up}" />
+			</Rectangle.Fill>
+		</Rectangle>
+		<Rectangle x:Name="DownArrow" Margin="20,40,20,20" Opacity="0.2">
+			<Rectangle.Fill>
+				<VisualBrush Visual="{StaticResource appbar_arrow_down}" />
+			</Rectangle.Fill>
+		</Rectangle>
+
+		<StackPanel VerticalAlignment="Bottom" Margin="10,0,0,10" Orientation="Horizontal">
+			<TextBlock x:Name="DistanceTextBlock" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="??" />
+			<TextBlock Margin="3,0,0,0" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="cm" />
+		</StackPanel>
+
+	</Grid>
+</Controls:MetroWindow>
