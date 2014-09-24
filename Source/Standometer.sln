@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Standometer.UI.WPF", "Stand
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StandometerSketch", "StandometerSketch\StandometerSketch.vcxproj", "{8852E8EF-DD17-4A17-A505-FECA100AC4B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Standometer.Core", "Standometer.Core\Standometer.Core.csproj", "{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,16 @@ Global
 		{8852E8EF-DD17-4A17-A505-FECA100AC4B2}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{8852E8EF-DD17-4A17-A505-FECA100AC4B2}.Release|Win32.ActiveCfg = Release|Win32
 		{8852E8EF-DD17-4A17-A505-FECA100AC4B2}.Release|Win32.Build.0 = Release|Win32
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F18F6082-5D0A-4D4A-8575-36CB7AB78B18}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

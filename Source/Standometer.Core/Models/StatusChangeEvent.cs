@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Standometer.UI.WPF
+namespace Standometer.Core.Models
 {
-	class StatusChangeEvent
+	public class StatusChangeEvent
 	{
 		public StatusChangeEvent(DateTime eventDate, StartStop startOrStop, Status status)
 		{
@@ -20,13 +20,13 @@ namespace Standometer.UI.WPF
 		public Status Status { get; private set; }
 	}
 
-	enum StartStop
+	public enum StartStop
 	{
 		Start,
 		Stop
 	}
 
-	enum Status
+	public enum Status
 	{
 		Unknown,
 		Standing,
