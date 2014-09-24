@@ -17,17 +17,13 @@ using System.Windows.Threading;
 using Cirrious.MvvmCross.Wpf.Views;
 using Microsoft.Win32;
 using Standometer.Core.Models;
+using Standometer.Core.ViewModels;
 
 namespace Standometer.UI.WPF.Views
 {
-	/// <summary>
-	/// Interaction logic for MainView.xaml
-	/// </summary>
 	public partial class MainView : MvxWpfView
 	{
 		private const int standing_threshold = 100;
-
-		public ObservableCollection<StatusChangeEvent> events = new ObservableCollection<StatusChangeEvent>();
 		SerialPort serialPort;
 		Status currentStatus = Status.Unknown;
 
@@ -145,7 +141,8 @@ namespace Standometer.UI.WPF.Views
 
 		void LogEvent(StartStop startOrStop, Status status)
 		{
-			this.events.Add(new StatusChangeEvent(DateTime.Now, startOrStop, status));
+			MainViewModel vm = (MainViewModel)this.DataContext;
+			vm.StatusEvents.Add(new StatusChangeEvent(DateTime.Now, startOrStop, status));
 
 			Console.WriteLine(string.Format("Logging event at {0} for {1} {2}", DateTime.Now, startOrStop, status));
 		}

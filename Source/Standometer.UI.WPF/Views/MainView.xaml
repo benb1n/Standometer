@@ -5,6 +5,8 @@
 		xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:designModels="clr-namespace:Standometer.Core.ViewModels.Design;assembly=Standometer.Core"
+		d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type=designModels:MainDesignableViewModel}"
 		mc:Ignorable="d"
         d:DesignHeight="300" d:DesignWidth="255">
 	<views:MvxWpfView.Resources>
@@ -14,6 +16,11 @@
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
 			</ResourceDictionary.MergedDictionaries>
+			<DataTemplate x:Key="StatusEventListItemTemplate">
+				<Grid>
+					<TextBlock Text="{Binding EventDate}" />
+				</Grid>
+			</DataTemplate>
 		</ResourceDictionary>
 	</views:MvxWpfView.Resources>
 
@@ -21,18 +28,17 @@
 		<Controls:MetroAnimatedSingleRowTabControl>
 			<TabItem Header="Status">
 				<Grid>
-					<Rectangle x:Name="UpArrow" Margin="20,40,20,20" Opacity="0.2">
+					<Rectangle x:Name="UpArrow" Margin="20,10,20,20" Opacity="0.2">
 						<Rectangle.Fill>
 							<VisualBrush Visual="{StaticResource appbar_arrow_up}" />
 						</Rectangle.Fill>
 					</Rectangle>
-					<Rectangle x:Name="DownArrow" Margin="20,40,20,20" Opacity="0.2">
+					<Rectangle x:Name="DownArrow" Margin="20,10,20,20" Opacity="0.2">
 						<Rectangle.Fill>
 							<VisualBrush Visual="{StaticResource appbar_arrow_down}" />
 						</Rectangle.Fill>
 					</Rectangle>
-
-					<StackPanel VerticalAlignment="Bottom" Margin="10,0,0,10" Orientation="Horizontal">
+					<StackPanel VerticalAlignment="Bottom" Margin="10,0,0,5" Orientation="Horizontal">
 						<TextBlock x:Name="DistanceTextBlock" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="??" />
 						<TextBlock Margin="3,0,0,0" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="cm" />
 					</StackPanel>
@@ -40,15 +46,20 @@
 			</TabItem>
 			<TabItem Header="Stats">
 				<Grid>
-					<ListView HorizontalAlignment="Left" Height="266" Margin="10,10,0,0" VerticalAlignment="Top" Width="229">
+					<ListView ItemsSource="{Binding StatusEvents}" IsTextSearchEnabled="False">
 						<ListView.View>
-							<GridView>
-								<GridViewColumn/>
+							<GridView AllowsColumnReorder="False">
+								<GridViewColumn Width="70" Header="Date" DisplayMemberBinding="{Binding EventDate, StringFormat=h:mm tt}"  />
+								<GridViewColumn Width="90" Header="Start/Stop" DisplayMemberBinding="{Binding StartOrStop}" />
+								<GridViewColumn Width="70" Header="Up/Down" DisplayMemberBinding="{Binding Status}" />
 							</GridView>
 						</ListView.View>
 					</ListView>
 
 				</Grid>
+			</TabItem>
+			<TabItem Header="Settings">
+				<Grid></Grid>
 			</TabItem>
 		</Controls:MetroAnimatedSingleRowTabControl>
 	</Grid>
